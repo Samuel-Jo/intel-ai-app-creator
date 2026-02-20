@@ -22,25 +22,21 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'glass py-4 shadow-lg' : 'py-6 bg-white'}`}
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'glass py-4 shadow-lg' : 'py-6 bg-transparent'}`}
       style={{
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none',
-        color: isScrolled ? 'white' : 'black'
+        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none'
       }}
     >
-      <div className="container flex items-center justify-between relative text-inherit">
+      <div className="container flex items-center justify-between relative">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="flex items-center gap-2 group cursor-pointer z-10"
         >
-          <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-            <div className="w-4 h-4 border-2 border-white rounded-sm" />
-          </div>
-          <div className="text-xl font-bold tracking-tight font-heading">
-            Intel AI Creator
+          <div className="text-xl md:text-2xl font-black tracking-tighter text-white font-heading">
+            INTEL <span className="text-accent-yellow transition-all group-hover:shadow-neon">AI APP</span> CREATOR
           </div>
         </motion.div>
 
@@ -51,7 +47,7 @@ export default function Header() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className={`text-sm font-bold ${isScrolled ? 'text-text-muted hover:text-white' : 'text-gray-600 hover:text-blue-600'} transition-colors tracking-tight font-heading`}
+                  className="text-sm font-bold text-text-muted hover:text-white transition-colors tracking-widest uppercase font-heading"
                 >
                   {link.name}
                 </a>
@@ -62,7 +58,7 @@ export default function Header() {
 
         {/* Desktop CTA - Right */}
         <div className="hidden lg:flex items-center z-10">
-          <button className="px-8 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20">
+          <button className="btn-premium btn-primary px-8 py-3 text-sm" style={{ background: '#3b82f6' }}>
             지원하기
           </button>
         </div>
@@ -110,6 +106,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </nav>
   );
 }
