@@ -98,13 +98,13 @@ export default function Hero() {
                     </div>
 
                     {/* Right: Focused Visual (Only on XL/Large) */}
-                    <div className="hidden xl:block xl:col-span-5 relative">
+                    <div className="hidden xl:block xl:col-span-4 relative">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 1 }}
-                            className="glass-premium p-10 aspect-[4/5] flex flex-col justify-between"
-                            style={{ borderRadius: '40px' }}
+                            className="glass-premium p-8 aspect-[4/5] flex flex-col justify-between"
+                            style={{ borderRadius: '32px' }}
                         >
                             <div className="relative z-10 space-y-8">
                                 <div className="w-20 h-20 rounded-3xl flex items-center justify-center border border-accent-neon/20 bg-accent-neon/5">
