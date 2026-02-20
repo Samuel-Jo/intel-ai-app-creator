@@ -3,18 +3,18 @@ import { Zap, Cpu, Award } from 'lucide-react';
 
 const tools = [
     {
-        title: 'Efficiency with Low-Code & Vibe Coding',
-        description: 'Maximize development productivity by introducing the latest trends like low-code and Vibe Coding.',
+        title: '로우코드와 바이브코딩을 통한 효율성',
+        description: '최신 개발 트렌드인 로우코드(Low-code)와 바이브코딩을 도입하여 개발 생산성을 극대화합니다.',
         icon: <Zap className="text-neon" />
     },
     {
-        title: 'API Integration Mastery',
-        description: 'Design service structures that real users can use through external API integration beyond simple modeling.',
+        title: 'API 통합 마스터리',
+        description: '단순 모델링을 넘어, 외부 API 연동을 통해 실제 유저가 사용할 수 있는 서비스 구조를 설계합니다.',
         icon: <Cpu className="text-neon" />
     },
     {
-        title: 'Intel MCP Certification Content',
-        description: 'Learn global standard technology with content based on Intel\'s Machine Learning Professional (MCP) certification.',
+        title: '인텔 MCP 자격 인증 콘텐츠',
+        description: '인텔의 머신러닝 전문 자격(MCP) 기반 콘텐츠로 글로벌 스탠다드 기술을 습득합니다.',
         icon: <Award className="text-neon" />
     }
 ];
@@ -30,8 +30,8 @@ export default function Tools() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white"
                     >
-                        Leading Tools and <br />
-                        Practical Environments
+                        트렌드를 앞서가는 <br />
+                        개발 도구와 실습 환경
                     </motion.h2>
                 </div>
 

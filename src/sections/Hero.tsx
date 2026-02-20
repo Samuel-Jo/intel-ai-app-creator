@@ -18,7 +18,7 @@ export default function Hero() {
                         transition={{ duration: 0.6 }}
                         className="flex items-center gap-4 text-white/60 text-sm font-medium"
                     >
-                        <span>Ministry of Employment and Labor</span>
+                        <span>고용노동부</span>
                         <span className="w-1 h-1 bg-white/40 rounded-full" />
                         <span>RAPA</span>
                         <span className="w-1 h-1 bg-white/40 rounded-full" />
@@ -31,21 +31,21 @@ export default function Hero() {
                         transition={{ duration: 0.6, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold text-white leading-[1.1]"
                     >
-                        Intel Global <br />
-                        <span className="text-neon">AI Technology</span> <br />
-                        Mastery
+                        인텔 글로벌 AI 기술 <br />
+                        <span className="text-neon">내일배움카드로 전액 지원</span>
                     </motion.h1>
 
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="text-lg text-white/60 max-w-xl leading-relaxed"
+                        className="space-y-2"
                     >
-                        Fully funded by Tomorrow Learning Card.
-                        Join the 8th cohort of the Intel AI Application Creator Course.
-                        Master Generative AI, LLMs, and build a deployment-ready portfolio.
-                    </motion.p>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+                            인텔 AI 응용앱 크리에이터 <br />
+                            용인과정 8기 모집
+                        </h2>
+                    </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -54,10 +54,10 @@ export default function Hero() {
                         className="flex flex-wrap gap-4"
                     >
                         <button className="bg-neon text-black px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_20px_rgba(200,255,0,0.3)] transition-all flex items-center gap-2">
-                            Apply for 8th Cohort <ArrowRight size={20} />
+                            지금 바로 지원하기 <ArrowRight size={20} />
                         </button>
                         <button className="border border-white/20 text-white px-8 py-4 rounded-full font-medium text-base hover:bg-white/5 transition-colors">
-                            Download Brochure
+                            커리큘럼 상세보기
                         </button>
                     </motion.div>
 
@@ -68,9 +68,9 @@ export default function Hero() {
                         className="flex items-center gap-6 pt-4 border-t border-white/10"
                     >
                         {[
-                            "Real-world Projects",
-                            "Generative AI & LLM",
-                            "Job Portfolio"
+                            "실무 프로젝트 중심",
+                            "생성형 AI & LLM",
+                            "취업 포트폴리오 완성"
                         ].map((feature, i) => (
                             <div key={i} className="flex items-center gap-2 text-sm text-white/80">
                                 <div className="w-2 h-2 rounded-full bg-accent-blue" />

@@ -4,25 +4,25 @@ const phases = [
     {
         phase: 'Phase 1',
         title: 'Foundation',
-        description: 'Python Programming & Data Analysis Basics',
+        description: '파이썬 프로그래밍 & 데이터 분석 기초',
         icon: '📊'
     },
     {
         phase: 'Phase 2',
         title: 'Core Tech',
-        description: 'Machine Learning/Deep Learning Core Algorithms & Intel MCP Content',
+        description: '머신러닝/딥러닝 핵심 알고리즘 Intel MCP 콘텐츠 학습',
         icon: '⚙️'
     },
     {
         phase: 'Phase 3',
         title: 'Application',
-        description: 'LLM & Generative AI Modeling, AI API Integration & Service Planning',
+        description: 'LLM 및 생성형 AI 모델링 AI API 연동 및 서비스 기획',
         icon: '📱'
     },
     {
         phase: 'Phase 4',
         title: 'Capstone',
-        description: 'Real-world Project Implementation & Final Portfolio Completion',
+        description: '실전 프로젝트 수행 최종 포트폴리오 완성',
         icon: '🏆'
     }
 ];
@@ -38,8 +38,8 @@ export default function Curriculum() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        A 6-Month Journey from Basics <br />
-                        to Commercial-Level Projects
+                        기초부터 상용화 레벨 프로젝트까지, <br />
+                        6개월의 여정
                     </motion.h2>
                 </div>
 

@@ -12,8 +12,8 @@ export default function Schedule() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        2026, A 6-Month Commitment <br />
-                        to becoming an AI Specialist
+                        2026년 상반기, <br />
+                        AI 전문가로 거듭나기 위한 6개월의 몰입
                     </motion.h2>
                 </div>
 
@@ -26,9 +26,9 @@ export default function Schedule() {
                         className="grid md:grid-cols-3 gap-6"
                     >
                         {[
-                            { label: 'Application Deadline', value: 'March 22, 2026', icon: <Calendar size={18} />, color: 'bg-red-500/10 text-red-400' },
-                            { label: 'Education Period', value: 'Mar 30 - Sep 22, 2026', icon: <Calendar size={18} />, color: 'bg-neon/10 text-neon' },
-                            { label: 'Education Hours', value: 'Weekdays 09:00 - 18:00', icon: <Clock size={18} />, color: 'bg-accent-blue/10 text-accent-blue' }
+                            { label: '지원 마감일', value: '2026. 03. 22', icon: <Calendar size={18} />, color: 'bg-red-500/10 text-red-400' },
+                            { label: '교육 기간', value: '03. 30 - 09. 22', icon: <Calendar size={18} />, color: 'bg-neon/10 text-neon' },
+                            { label: '교육 시간', value: '평일 09:00 - 18:00', icon: <Clock size={18} />, color: 'bg-accent-blue/10 text-accent-blue' }
                         ].map((item, i) => (
                             <div key={i} className={`p-6 rounded-2xl border border-white/5 bg-bg-secondary ${item.color}`}>
                                 <div className="flex items-center gap-2 mb-2 font-bold text-xs uppercase tracking-wider opacity-60">
@@ -50,13 +50,13 @@ export default function Schedule() {
                             <div className="p-4 bg-neon/10 rounded-2xl text-neon">
                                 <CheckCircle2 size={32} />
                             </div>
-                            <h3 className="text-2xl font-bold">Eligibility <br /> Checklist</h3>
+                            <h3 className="text-2xl font-bold">누구나 <br /> 지원 가능</h3>
                         </div>
                         <div className="flex-1 grid md:grid-cols-1 gap-4">
                             {[
-                                "Eligible for Tomorrow Learning Card issuance",
-                                "Open to anyone under 70 years of age",
-                                "Major doesn't matter: Non-majors can learn from basics"
+                                "내일배움카드 발급이 가능한 분",
+                                "70세 미만의 대한민국 국민 누구나",
+                                "전공 무관: 비전공자도 기초부터 체계적으로 학습"
                             ].map((text, i) => (
                                 <div key={i} className="flex items-center gap-4 py-3 border-b border-white/5 last:border-0">
                                     <CheckCircle2 size={16} className="text-neon flex-shrink-0" />

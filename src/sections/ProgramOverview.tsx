@@ -5,17 +5,17 @@ const programs = [
     {
         icon: <Globe className="text-neon" size={32} />,
         title: 'Global Tech Stack',
-        description: 'Experience the technology and curriculum of global leader Intel firsthand.'
+        description: '글로벌 기업 인텔(Intel)의 기술과 커리큘럼을 직접 경험합니다.'
     },
     {
         icon: <Cpu className="text-neon" size={32} />,
         title: 'Zero Cost, High ROI',
-        description: 'Full tuition support through Ministry of Labor K-Digital Training.'
+        description: '고용노동부 K-Digital Training 과정으로 교육비 전액 무료 지원'
     },
     {
         icon: <GraduationCap className="text-neon" size={32} />,
         title: 'Project-Based Learning',
-        description: 'Not just simple coding, but building a portfolio of real-working AI applications.'
+        description: '단순 코딩이 아닌, 실제 작동하는 AI 애플리케이션 포트폴리오 확보'
     }
 ];
 
@@ -30,17 +30,9 @@ export default function ProgramOverview() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-4"
                     >
-                        Developing Real AI Developers
+                        이론 학습을 넘어, '서비스'를 만드는 <br />
+                        실전 AI 개발자 양성
                     </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg text-white/60"
-                    >
-                        Go beyond theoretical learning to create real 'services'.
-                    </motion.p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">

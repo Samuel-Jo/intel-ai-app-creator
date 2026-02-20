@@ -12,8 +12,8 @@ export default function Outcomes() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        Your Resume is Proven by <br />
-                        <span className="text-neon">'Project Outcomes'</span>
+                        당신의 이력서는 <br />
+                        <span className="text-neon">'프로젝트 결과물'</span>로 증명됩니다
                     </motion.h2>
                 </div>
 
@@ -27,7 +27,7 @@ export default function Outcomes() {
                     >
                         <div className="bg-black/40 border border-white/10 rounded-3xl p-4 shadow-2xl overflow-hidden aspect-video">
                             <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-950 rounded-2xl flex items-center justify-center">
-                                <div className="text-white/10 text-xl font-bold">[Dashboard & Mobile Mockup]</div>
+                                <div className="text-white/10 text-xl font-bold">[대시보드 및 모바일 목업]</div>
                             </div>
                         </div>
                         {/* Hovering stats */}
@@ -43,9 +43,9 @@ export default function Outcomes() {
                                 <Rocket className="text-neon" />
                             </div>
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-white">Deployment-Ready Output</h3>
+                                <h3 className="text-2xl font-bold text-white">실전 서비스 수준의 결과물</h3>
                                 <p className="text-white/40 leading-relaxed">
-                                    Complete a portfolio that becomes a powerful tool in job applications by securing results at the level of real services.
+                                    취업 지원 시 강력한 무기가 되는 포트폴리오를 완성하여 단순 학습 이상의 가치를 창출합니다.
                                 </p>
                             </div>
                         </div>
@@ -55,9 +55,9 @@ export default function Outcomes() {
                                 <Trophy className="text-accent-blue" />
                             </div>
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-white">Global Opportunity</h3>
+                                <h3 className="text-2xl font-bold text-white">글로벌 무대 진출 기회</h3>
                                 <p className="text-white/40 leading-relaxed">
-                                    Support your challenge to a wider stage by linking excellent participants with opportunities to join the Global AI Hackathon.
+                                    우수 참가자에게는 글로벌 AI 해커톤 참가 등 더 넓은 세계로 도약할 수 있는 기회를 연계합니다.
                                 </p>
                             </div>
                         </div>

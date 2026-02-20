@@ -4,23 +4,23 @@ import { Briefcase, Lightbulb, Users, Code, PieChart } from 'lucide-react';
 export default function Careers() {
     const paths = [
         {
-            title: 'Job Seekers',
-            description: 'University graduates of any major who want to pivot their career into the AI field.',
+            title: '취업 준비생',
+            description: 'AI 분야로 커리어를 전환하고 싶은 전공 무관 대학 졸업생 및 예정자',
             icon: <Briefcase className="text-neon" />,
             tag: '구직자'
         },
         {
-            title: 'Prospective Founders',
-            description: 'Entrepreneurs-to-be who want to create their own AI services directly.',
+            title: '예비 창업자',
+            description: '자신만의 AI 서비스를 기획하고 직접 제품화하고 싶은 예비 창업가',
             icon: <Lightbulb className="text-neon" />,
-            tag: '예비 창업자'
+            tag: '창업준비'
         }
     ];
 
     const roles = [
-        { title: 'AI Service Planner', desc: 'GenAI Planning', icon: <Users size={16} /> },
-        { title: 'AI Developer', desc: 'LLM/NLP App Dev', icon: <Code size={16} /> },
-        { title: 'Data Analyst', desc: 'Big Data & Viz', icon: <PieChart size={16} /> }
+        { title: 'AI 서비스 기획자', desc: '생성형 AI 기반 비즈니스 기획', icon: <Users size={16} /> },
+        { title: 'AI 앱 개발자', desc: 'LLM 및 API 연동 서비스 개발', icon: <Code size={16} /> },
+        { title: '데이터 분석가', desc: '데이터 인사이트 도출 및 시각화', icon: <PieChart size={16} /> }
     ];
 
     return (
@@ -33,8 +33,8 @@ export default function Careers() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white mb-6"
                     >
-                        Opening Doors to Various Careers, <br />
-                        from AI Developers to Service Planners
+                        AI 개발자부터 기획자까지, <br />
+                        당신의 새로운 진로를 응원합니다
                     </motion.h2>
                 </div>
 

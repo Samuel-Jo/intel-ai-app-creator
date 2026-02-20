@@ -15,17 +15,16 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: 'Program', href: '#program' },
-    { name: 'Full Curriculum', href: '#curriculum' },
-    { name: 'Outcomes', href: '#outcomes' },
-    { name: 'FAQ', href: '#faq' },
+    { name: '프로그램 개요', href: '#program' },
+    { name: '전체 커리큘럼', href: '#curriculum' },
+    { name: '성과 및 혜택', href: '#outcomes' },
+    { name: '문의처', href: '#faq' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
+        }`}
     >
       <div className="container flex items-center justify-between">
         {/* Logo Area */}
@@ -47,7 +46,7 @@ export default function Header() {
             </a>
           ))}
           <button className="bg-neon text-black px-6 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
-            Apply Now
+            지금 바로 지원하기
           </button>
         </div>
 
@@ -81,7 +80,7 @@ export default function Header() {
                 </a>
               ))}
               <button className="w-full bg-neon text-black py-3 rounded-xl font-bold">
-                Apply Now
+                지금 바로 지원하기
               </button>
             </div>
           </motion.div>

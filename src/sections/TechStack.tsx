@@ -4,29 +4,29 @@ import { MessageSquare, Code, BarChart, Eye } from 'lucide-react';
 const techStack = [
     {
         category: 'Generative AI & LLM',
-        title: 'Modern Generative Tech',
-        items: ['Large Language Model Application', 'Generative AI App Development Practice'],
+        title: '현대적인 생성형 기술',
+        items: ['대규모 언어 모델 활용', '생성형 AI 기반 앱 개발 실습'],
         icon: <MessageSquare className="text-neon" size={24} />,
         color: 'bg-blue-500/10'
     },
     {
         category: 'Python & Low-Code',
-        title: 'Efficiency with Vibe Coding',
-        items: ['Python & Self-Directed Learning', 'Vibe Coding & API Integration'],
+        title: 'Vibe Coding을 통한 효율성',
+        items: ['파이썬 활용 및 자율학습', '바이브코딩 및 API 연동'],
         icon: <Code className="text-neon" size={24} />,
         color: 'bg-green-500/10'
     },
     {
         category: 'Machine Learning & Big Data',
-        title: 'Data Intelligence',
-        items: ['Big Data Processing/Visualization', 'Statistical Modeling'],
+        title: '데이터 인텔리전스',
+        items: ['빅데이터 처리/시각화', '통계 모델링'],
         icon: <BarChart className="text-neon" size={24} />,
         color: 'bg-purple-500/10'
     },
     {
         category: 'Advanced Perception',
-        title: 'Visual & Linguistic AI',
-        items: ['Computer Vision', 'NLP (Natural Language Processing)'],
+        title: '시각 및 언어 AI',
+        items: ['컴퓨터 비전', 'NLP (자연어 처리)'],
         icon: <Eye className="text-neon" size={24} />,
         color: 'bg-orange-500/10'
     }
@@ -43,8 +43,8 @@ export default function TechStack() {
                         viewport={{ once: true }}
                         className="text-3xl md:text-5xl font-bold text-white"
                     >
-                        Core Technology Stack <br />
-                        Required by the Industry
+                        현업에서 가장 필요로 하는 <br />
+                        핵심 AI 기술 스택
                     </motion.h2>
                 </div>
 

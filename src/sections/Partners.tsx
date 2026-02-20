@@ -11,15 +11,15 @@ export default function Partners() {
                         viewport={{ once: true }}
                         className="text-2xl md:text-4xl font-bold text-white"
                     >
-                        Government Support Meets Global Expertise
+                        정부의 지원과 글로벌 기업의 전문성이 만났습니다
                     </motion.h2>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24">
                     {[
-                        { name: 'Ministry of Labor', label: 'Full National Support', color: 'text-blue-400' },
-                        { name: 'RAPA', label: 'Systematic Education Management', color: 'text-white' },
-                        { name: 'Intel', label: 'Advanced AI Technology Stack', color: 'text-blue-500' }
+                        { name: '고용노동부', label: '역량 있는 인재 양성을 위한 전액 국비 지원', color: 'text-blue-400' },
+                        { name: 'RAPA', label: '체계적인 교육 운영 및 관리', color: 'text-white' },
+                        { name: 'Intel', label: '현업에서 쓰이는 AI 기술 스택 및 실무 프로젝트 가이드', color: 'text-blue-500' }
                     ].map((partner, i) => (
                         <motion.div
                             key={partner.name}
@@ -46,7 +46,7 @@ export default function Partners() {
                     viewport={{ once: true }}
                     className="mt-16 py-4 px-8 bg-neon/10 border border-neon/20 rounded-full text-center text-neon font-medium text-sm inline-block left-1/2 -translate-x-1/2 relative"
                 >
-                    A proven curriculum co-designed by trusted institutions.
+                    믿을 수 있는 기관들이 함께 설계한 검증된 교육 과정입니다.
                 </motion.div>
             </div>
         </section>
