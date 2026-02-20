@@ -1,51 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Rich Premium Palette */
-  --bg-primary: #030303;
-  --bg-secondary: #08080a;
-  --bg-tertiary: #101014;
+  /* Reference Site Palette (Slate & Blue) */
+  --bg-primary: #0f172a;
+  /* color-slate-900 */
+  --bg-secondary: #020617;
+  /* even darker for sections */
+  --bg-tertiary: #1e293b;
+  /* color-slate-800 */
 
-  --accent-neon: #d4ff00;
-  --accent-neon-rgba: rgba(212, 255, 0, 0.1);
-  --accent-blue: #00e5ff;
-  --accent-blue-rgba: rgba(0, 229, 255, 0.1);
-  --accent-purple: #9d00ff;
+  --accent-neon: #3b82f6;
+  /* color-blue-500 equivalent for primary accent */
+  --accent-neon-rgba: rgba(59, 130, 246, 0.1);
+  --accent-blue: #0ea5e9;
+  /* color-cyan-500 */
+  --accent-blue-rgba: rgba(14, 165, 233, 0.1);
+  --accent-purple: #8b5cf6;
 
-  --text-primary: #ffffff;
+  --text-primary: #f8fafc;
+  /* color-slate-50 */
   --text-secondary: #94a3b8;
+  /* color-slate-400 */
   --text-muted: #64748b;
+  /* color-slate-500 */
 
-  --glass-bg: rgba(255, 255, 255, 0.02);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-blur: blur(16px);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: ui-sans-serif, system-ui, sans-serif;
+  --font-body: ui-sans-serif, system-ui, sans-serif;
 
-  /* Spacing Scale - Strict 8px base */
+  /* Spacing Scale */
   --space-unit: 1rem;
   --space-xs: 0.5rem;
-  /* 8px */
   --space-sm: 1rem;
-  /* 16px */
   --space-md: 1.5rem;
-  /* 24px */
   --space-lg: 2rem;
-  /* 32px */
   --space-xl: 3rem;
-  /* 48px */
   --space-xxl: 5rem;
-  /* 80px */
   --space-section: 10rem;
-  /* 160px - The "Airy" Standard */
 
   /* Shadows */
-  --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   --shadow-neon: 0 0 30px var(--accent-neon-rgba);
 
-  --transition-premium: cubic-bezier(0.19, 1, 0.22, 1);
+  --transition-premium: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -82,35 +83,38 @@ h6 {
 
 /* Layout Core */
 .container {
-  max-width: 1600px;
-  /* Slightly wider max-width to accommodate larger gutters */
+  max-width: 1280px;
+  /* Reference site max-w-7xl equivalent */
   margin: 0 auto;
-  padding: 0 5%;
-  /* Minimum 5% gutter on mobile/tablet */
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding: 0 8%;
-    /* 8% gutter on desktop */
-  }
-}
-
-@media (min-width: 1440px) {
-  .container {
-    padding: 0 12%;
-    /* Aggressive 12% gutter for premium wide screens like the image */
+    padding: 0 4rem;
   }
 }
 
 .container-narrow {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 1.5rem;
 }
 
 .section-padding {
-  padding: var(--space-section) 0;
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 10rem 0;
+  }
 }
 
 /* Utility Flex & Grid */
