@@ -42,22 +42,22 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-10">
-          <ul className="flex items-center gap-8">
+          <button className="btn-premium btn-primary px-8 py-3 text-sm">
+            지금 지원하기
+          </button>
+          <div className="h-6 w-px" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+          <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-sm font-bold text-text-muted hover:text-white transition-colors tracking-widest uppercase font-heading"
+                  className="text-lg md:text-xl font-bold text-text-muted hover:text-white transition-colors tracking-tight font-heading"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="h-6 w-px" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
-          <button className="btn-premium btn-primary px-6 py-2.5 text-xs">
-            지금 지원하기
-          </button>
         </div>
 
         {/* Mobile Toggle */}

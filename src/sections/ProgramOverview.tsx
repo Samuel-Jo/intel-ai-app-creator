@@ -24,8 +24,8 @@ export default function ProgramOverview() {
     return (
         <section id="program" className="section-padding bg-bg-secondary relative overflow-hidden">
             {/* Subtle Gradient Spotlights */}
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent-neon/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-cyan/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent-yellow/5 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-blue/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container relative z-10">
                 <div className="grid lg:grid-cols-2 gap-24 xl:gap-32 items-center">
@@ -36,7 +36,7 @@ export default function ProgramOverview() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="text-accent-cyan text-xs font-bold tracking-[0.4em] uppercase"
+                            className="text-accent-yellow text-xs font-bold tracking-[0.4em] uppercase"
                         >
                             Program Philosophy
                         </motion.div>
@@ -48,7 +48,7 @@ export default function ProgramOverview() {
                             className="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tighter"
                         >
                             코드를 넘어 <br />
-                            <span className="text-gradient-neon">제품을 만드는</span> <br />
+                            <span className="text-gradient-yellow">제품을 만드는</span> <br />
                             경험을 선물합니다
                         </motion.h2>
                         <motion.p
