@@ -3,54 +3,68 @@ import { Globe, GraduationCap, Cpu } from 'lucide-react';
 
 const programs = [
     {
-        icon: <Globe className="text-neon" size={32} />,
+        icon: <Globe className="text-accent-neon" size={32} />,
         title: 'Global Tech Stack',
-        description: '글로벌 기업 인텔(Intel)의 기술과 커리큘럼을 직접 경험합니다.'
+        description: '글로벌 IT 리더 인텔(Intel)의 공인 커리큘럼과 핵심 기술 스택을 직접 경험하며 세계적인 수준의 개발 역량을 쌓습니다.'
     },
     {
-        icon: <Cpu className="text-neon" size={32} />,
-        title: 'Zero Cost, High ROI',
-        description: '고용노동부 K-Digital Training 과정으로 교육비 전액 무료 지원'
+        icon: <GraduationCap className="text-accent-neon" size={32} />,
+        title: 'Practical Project',
+        description: '단순 이론을 넘어 실무에서 즉시 활용 가능한 프로젝트 중심의 교육으로, 기업이 탐내는 실전형 인재로 성장합니다.'
     },
     {
-        icon: <GraduationCap className="text-neon" size={32} />,
-        title: 'Project-Based Learning',
-        description: '단순 코딩이 아닌, 실제 작동하는 AI 애플리케이션 포트폴리오 확보'
+        icon: <Cpu className="text-accent-neon" size={32} />,
+        title: 'Intel Official MCP',
+        description: '인텔 공식 머신러닝 자격증(MCP) 취득을 위한 심화 학습과 글로벌 인증 프로세스를 지원받습니다.'
     }
 ];
 
 export default function ProgramOverview() {
     return (
-        <section id="program" className="section bg-bg-primary">
-            <div className="container">
-                <div className="mb-16 text-center">
+        <section id="program" className="section-padding bg-bg-secondary relative">
+            <div className="container relative z-10">
+                <div className="text-center max-w-4xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="text-accent-neon text-xs font-bold tracking-widest uppercase mb-4"
+                    >
+                        Program Overview
+                    </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-4"
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-bold text-white leading-tight"
                     >
-                        이론 학습을 넘어, '서비스'를 만드는 <br />
-                        실전 AI 개발자 양성
+                        단순한 교육을 넘어 <br />
+                        <span className="text-gradient-neon">커리어의 압도적 도약</span>을 시작하세요
                     </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {programs.map((item, index) => (
+                <div className="grid lg:grid-cols-3 gap-8">
+                    {programs.map((program, i) => (
                         <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
+                            key={i}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="bg-bg-secondary border border-white/10 p-8 rounded-3xl hover:border-neon/40 transition-colors group"
+                            transition={{ delay: i * 0.1 }}
+                            className="glass p-12 flex flex-col items-center text-center transition-all duration-500 hover:bg-white/[0.05]"
+                            style={{
+                                borderColor: 'rgba(255, 255, 255, 0.05)',
+                                backgroundColor: 'rgba(255, 255, 255, 0.03)'
+                            }}
                         >
-                            <div className="mb-6 w-16 h-16 bg-neon/5 rounded-2xl flex items-center justify-center group-hover:bg-neon/10 transition-colors">
-                                {item.icon}
+                            <div className="w-20 h-20 rounded-3xl bg-white/5 flex items-center justify-center mb-10 transition-transform duration-500 group-hover:scale-110"
+                                style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
+                                {program.icon}
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                            <p className="text-white/60 leading-relaxed">
-                                {item.description}
+                            <h3 className="text-2xl font-bold text-white mb-6 font-heading tracking-tight">{program.title}</h3>
+                            <p className="text-text-secondary text-base leading-relaxed">
+                                {program.description}
                             </p>
                         </motion.div>
                     ))}

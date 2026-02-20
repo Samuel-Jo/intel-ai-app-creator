@@ -1,123 +1,197 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Monitor, GraduationCap } from 'lucide-react';
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#050505] -z-20" />
-            <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-neon/5 rounded-full blur-[120px] -z-10 translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-accent-blue/5 rounded-full blur-[100px] -z-10 -translate-x-1/3 translate-y-1/3" />
+        <section className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-bg-primary font-body">
+            {/* Immersive Background Gradients */}
+            <div className="absolute rounded-full animate-pulse pointer-events-none"
+                style={{
+                    top: '-10%',
+                    right: '-10%',
+                    width: '600px',
+                    height: '600px',
+                    filter: 'blur(150px)',
+                    backgroundColor: 'rgba(212, 255, 0, 0.15)'
+                }} />
+            <div className="absolute rounded-full pointer-events-none"
+                style={{
+                    bottom: '-10%',
+                    left: '-10%',
+                    width: '500px',
+                    height: '500px',
+                    filter: 'blur(120px)',
+                    backgroundColor: 'rgba(0, 229, 255, 0.15)'
+                }} />
 
-            <div className="container grid lg:grid-cols-2 gap-12 items-center">
-                {/* Left Content */}
-                <div className="space-y-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="flex items-center gap-4 text-white/60 text-sm font-medium"
-                    >
-                        <span>고용노동부</span>
-                        <span className="w-1 h-1 bg-white/40 rounded-full" />
-                        <span>RAPA</span>
-                        <span className="w-1 h-1 bg-white/40 rounded-full" />
-                        <span>Intel</span>
-                    </motion.div>
+            {/* Subtle Grid Pattern */}
+            <div className="absolute inset-0 pointer-events-none"
+                style={{
+                    backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                    backgroundSize: '40px 40px',
+                    opacity: 0.03
+                }} />
 
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-bold text-white leading-[1.1]"
-                    >
-                        인텔 글로벌 AI 기술 <br />
-                        <span className="text-neon">내일배움카드로 전액 지원</span>
-                    </motion.h1>
+            <div className="container relative z-10">
+                <div className="grid lg:grid-cols-12 gap-12 items-center">
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="space-y-2"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                            인텔 AI 응용앱 크리에이터 <br />
-                            용인과정 8기 모집
-                        </h2>
-                    </motion.div>
+                    {/* Left Content */}
+                    <div className="lg:col-span-7" style={{ gridColumn: 'span 7' }}>
+                        <div className="space-y-10">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.8 }}
+                                className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass"
+                                style={{ borderColor: 'rgba(212, 255, 0, 0.2)' }}
+                            >
+                                <Sparkles size={16} className="text-accent-neon" />
+                                <span className="text-xs md:text-sm font-bold tracking-widest text-white/80 uppercase">
+                                    인텔 x 고용노동부 x RAPA 공동 주관
+                                </span>
+                            </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="flex flex-wrap gap-4"
-                    >
-                        <button className="bg-neon text-black px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_20px_rgba(200,255,0,0.3)] transition-all flex items-center gap-2">
-                            지금 바로 지원하기 <ArrowRight size={20} />
-                        </button>
-                        <button className="border border-white/20 text-white px-8 py-4 rounded-full font-medium text-base hover:bg-white/5 transition-colors">
-                            커리큘럼 상세보기
-                        </button>
-                    </motion.div>
+                            <div className="space-y-6">
+                                <motion.h1
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.2 }}
+                                    className="text-6xl md:text-8xl font-bold leading-tight tracking-tight text-white mb-2"
+                                >
+                                    미래를 설계하는 <br />
+                                    <span className="text-gradient-neon">AI 크리에이터</span>
+                                </motion.h1>
 
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="flex items-center gap-6 pt-4 border-t border-white/10"
-                    >
-                        {[
-                            "실무 프로젝트 중심",
-                            "생성형 AI & LLM",
-                            "취업 포트폴리오 완성"
-                        ].map((feature, i) => (
-                            <div key={i} className="flex items-center gap-2 text-sm text-white/80">
-                                <div className="w-2 h-2 rounded-full bg-accent-blue" />
-                                {feature}
+                                <motion.p
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: 0.4 }}
+                                    className="text-xl md:text-2xl text-text-secondary max-w-2xl leading-relaxed"
+                                >
+                                    글로벌 리더 인텔의 기술력으로 완성하는 실무 중심 AI 개발자 양성 과정.
+                                    내일배움카드로 <span className="text-white font-bold">교육비 100% 지원</span>받으세요.
+                                </motion.p>
                             </div>
-                        ))}
-                    </motion.div>
-                </div>
 
-                {/* Right Visual */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative lg:h-[600px] flex items-center justify-center"
-                >
-                    {/* Main Visual Image Placeholder */}
-                    <div className="relative z-10 w-full aspect-[4/3] bg-gradient-to-tr from-gray-800 to-gray-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                        {/* If user provided an image for hero, use it here, otherwise placeholder */}
-                        {/* Using a placeholder div for now that represents the 'man on laptop' from slide 1 */}
-                        <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xl font-bold">
-                            [Hero Image: Man working on laptop]
-                        </div>
-                        {/* Decorative elements */}
-                        <div className="absolute top-8 left-8 bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10">
-                            <div className="text-neon font-bold text-2xl">100%</div>
-                            <div className="text-xs text-white/60">Tuition Support</div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 0.6 }}
+                                className="flex flex-wrap gap-5"
+                            >
+                                <button className="btn-premium btn-primary text-xl">
+                                    지금 바로 지원하기 <ArrowRight size={22} />
+                                </button>
+                                <button className="btn-premium glass text-white text-xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                                    커리큘럼 살펴보기
+                                </button>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                                className="flex items-center gap-12 pt-8"
+                            >
+                                <div>
+                                    <div className="text-3xl font-bold text-white">100%</div>
+                                    <div className="text-xs text-text-muted font-bold uppercase tracking-widest mt-1">Tuition Support</div>
+                                </div>
+                                <div className="shrink-0 w-px h-10 bg-white/10" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} />
+                                <div>
+                                    <div className="text-3xl font-bold text-white">8th</div>
+                                    <div className="text-xs text-text-muted font-bold uppercase tracking-widest mt-1">Batch Recruitment</div>
+                                </div>
+                                <div className="shrink-0 w-px h-10 bg-white/10" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} />
+                                <div>
+                                    <div className="text-3xl font-bold text-white">Ready</div>
+                                    <div className="text-xs text-text-muted font-bold uppercase tracking-widest mt-1">To Deploy</div>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
 
-                    {/* Floating UI Elements (Abstract representation of AI/Tech) */}
-                    <motion.div
-                        animate={{ y: [0, -20, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -right-8 top-20 bg-black/80 backdrop-blur-xl p-4 rounded-xl border border-white/10 shadow-xl z-20"
-                    >
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                AI
+                    {/* Right Visual Content */}
+                    <div className="lg:col-span-5" style={{ gridColumn: 'span 5' }}>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="relative mt-12 lg:mt-0"
+                        >
+                            <div className="glass p-8 aspect-[4/5] relative overflow-hidden flex flex-col justify-between"
+                                style={{ borderRadius: '32px' }}>
+                                <div className="absolute inset-0 pointer-events-none"
+                                    style={{ background: 'linear-gradient(to bottom right, rgba(255,255,255,0.05), transparent)', opacity: 0.3 }} />
+
+                                <div className="relative z-10 space-y-6">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center border"
+                                        style={{ backgroundColor: 'rgba(212, 255, 0, 0.1)', borderColor: 'rgba(212, 255, 0, 0.2)' }}>
+                                        <Monitor className="text-accent-neon" size={32} />
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-white leading-tight font-heading">
+                                        Generative AI <br /> Application Dev
+                                    </h3>
+                                    <div className="h-1 w-20 bg-accent-neon" style={{ backgroundColor: 'var(--accent-neon)' }} />
+                                </div>
+
+                                <div className="p-6 rounded-2xl border space-y-4"
+                                    style={{ backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(10px)', borderColor: 'rgba(255,255,255,0.05)' }}>
+                                    <div className="flex justify-between items-center text-[10px] text-text-muted uppercase font-bold tracking-widest">
+                                        <span>Training Status</span>
+                                        <span className="text-accent-neon flex items-center gap-1">
+                                            <span className="w-1.5 h-1.5 bg-accent-neon rounded-full animate-ping"
+                                                style={{ backgroundColor: 'var(--accent-neon)' }} />
+                                            Active
+                                        </span>
+                                    </div>
+                                    <div className="text-2xl font-bold text-white" style={{ fontFamily: 'monospace' }}>Intel® OpenVINO™</div>
+                                    <div className="space-y-2">
+                                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+                                            <motion.div
+                                                animate={{ width: ["0%", "85%"] }}
+                                                transition={{ duration: 2, ease: "easeInOut" }}
+                                                className="h-full bg-accent-neon"
+                                                style={{ backgroundColor: 'var(--accent-neon)' }}
+                                            />
+                                        </div>
+                                        <div className="flex justify-between text-[10px] text-text-muted font-bold">
+                                            <span>PROCESSED: 1.2TB</span>
+                                            <span>ACCURACY: 99.4%</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <div className="text-sm font-bold text-white">GenAI Model</div>
-                                <div className="text-xs text-green-400">Ready to deploy</div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </motion.div>
+
+                            {/* Floating Badges */}
+                            <motion.div
+                                animate={{ y: [-10, 10] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute glass p-4 pr-10 flex items-center gap-4 z-20"
+                                style={{ bottom: '15%', left: '-15%', borderColor: 'rgba(0, 229, 255, 0.2)' }}
+                            >
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 229, 255, 0.1)' }}>
+                                    <GraduationCap className="text-accent-blue" size={24} />
+                                </div>
+                                <div className="shrink-0">
+                                    <div className="text-[10px] text-text-muted font-bold uppercase tracking-widest">Certificate</div>
+                                    <div className="text-sm font-bold text-white">Intel Official</div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                animate={{ y: [10, -10] }}
+                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                                className="absolute bg-white text-black p-4 px-6 rounded-2xl font-bold transform -rotate-3 z-20"
+                                style={{ top: '10%', right: '-5%', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}
+                            >
+                                <div className="text-[10px] uppercase text-black/40 mb-1 font-bold">모집 마감 임박</div>
+                                <div className="text-2xl font-black">D-7일 전</div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                </div>
             </div>
         </section>
     );

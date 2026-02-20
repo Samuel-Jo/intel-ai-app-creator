@@ -1,64 +1,81 @@
 import { motion } from 'framer-motion';
-import { Zap, Cpu, Award } from 'lucide-react';
+import { Zap, Cpu, Award, ChevronRight } from 'lucide-react';
 
 const tools = [
     {
-        title: '로우코드와 바이브코딩을 통한 효율성',
-        description: '최신 개발 트렌드인 로우코드(Low-code)와 바이브코딩을 도입하여 개발 생산성을 극대화합니다.',
-        icon: <Zap className="text-neon" />
+        title: 'Low-Code & Vibe Coding',
+        description: '최신 개발 트렌드인 로우코드와 바이브코딩을 도입하여, 복잡한 문법보다 아이디어 구현에 집중하고 개발 생산성을 5배 이상 극대화합니다.',
+        icon: <Zap className="text-accent-neon" size={24} />,
+        accent: { backgroundColor: 'rgba(212, 255, 0, 0.1)' }
     },
     {
-        title: 'API 통합 마스터리',
-        description: '단순 모델링을 넘어, 외부 API 연동을 통해 실제 유저가 사용할 수 있는 서비스 구조를 설계합니다.',
-        icon: <Cpu className="text-neon" />
+        title: 'API Integration Mastery',
+        description: '단순 모델 학습을 넘어 다양한 AI API(OpenAI, Anthropic 등)와 인텔 기술을 통합하여 실제 유저가 즉시 사용 가능한 엔드투엔드 서비스 구조를 완성합니다.',
+        icon: <Cpu className="text-accent-neon" size={24} />,
+        accent: { backgroundColor: 'rgba(212, 255, 0, 0.1)' }
     },
     {
-        title: '인텔 MCP 자격 인증 콘텐츠',
-        description: '인텔의 머신러닝 전문 자격(MCP) 기반 콘텐츠로 글로벌 스탠다드 기술을 습득합니다.',
-        icon: <Award className="text-neon" />
+        title: 'Intel Official Content',
+        description: '글로벌 인텔 본사의 머신러닝 전문 인증(MCP) 기반 콘텐츠를 활용하여, 세계 시장에서도 인정받는 글로벌 스탠다드 AI 기술 역량을 확보합니다.',
+        icon: <Award className="text-accent-neon" size={24} />,
+        accent: { backgroundColor: 'rgba(212, 255, 0, 0.1)' }
     }
 ];
 
 export default function Tools() {
     return (
-        <section className="section bg-bg-primary overflow-hidden">
-            <div className="container">
-                <div className="mb-20">
-                    <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+        <section className="section-padding bg-bg-primary overflow-hidden relative">
+            <div className="container relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-white"
+                        className="text-accent-neon text-xs font-bold tracking-widest uppercase mb-4"
                     >
-                        트렌드를 앞서가는 <br />
-                        개발 도구와 실습 환경
+                        Developer Environment
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-5xl font-bold text-white leading-tight"
+                    >
+                        트렌드를 리드하는 <br />
+                        <span className="text-gradient-neon">실습 환경과 개발 도구</span>
                     </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-12">
+                <div className="grid lg:grid-cols-3 gap-8">
                     {tools.map((tool, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1 }}
-                            className="space-y-6"
+                            className="glass p-10 flex flex-col group transition-all duration-500"
+                            whileHover={{ borderColor: 'rgba(212, 255, 0, 0.3)', transform: 'translateY(-4px)' }}
                         >
-                            <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center">
+                            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 border transition-transform duration-500 group-hover:scale-110"
+                                style={{ ...tool.accent, borderColor: 'rgba(255,255,255,0.05)' }}>
                                 {tool.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-white leading-tight">{tool.title}</h3>
-                            <div className="w-12 h-px bg-neon/30" />
-                            <p className="text-white/40 text-sm leading-relaxed">
+
+                            <h3 className="text-2xl font-bold text-white mb-6 font-heading tracking-tight leading-snug">
+                                {tool.title}
+                            </h3>
+
+                            <div className="h-px w-full mb-8"
+                                style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.1), transparent)' }} />
+
+                            <p className="text-text-secondary text-base leading-relaxed mb-8 flex-grow">
                                 {tool.description}
                             </p>
 
-                            {/* Abstract Graphics */}
-                            <div className="pt-8 opacity-20 group-hover:opacity-100 transition-opacity">
-                                {i === 0 && <div className="flex gap-2"><div className="w-8 h-8 rounded bg-neon"></div><div className="w-8 h-8 rounded bg-white/40"></div><div className="w-8 h-8 rounded bg-white/20"></div></div>}
-                                {i === 1 && <div className="w-24 h-12 border border-dashed border-white/40 rounded-full"></div>}
-                                {i === 2 && <div className="w-16 h-16 border-4 border-neon rounded-full border-t-transparent animate-spin"></div>}
+                            <div className="flex items-center gap-2 text-accent-neon text-sm font-bold tracking-tight cursor-pointer">
+                                Learn More <ChevronRight size={16} />
                             </div>
                         </motion.div>
                     ))}

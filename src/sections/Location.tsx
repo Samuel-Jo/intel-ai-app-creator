@@ -1,71 +1,117 @@
 import { motion } from 'framer-motion';
-import { MapPin, Info } from 'lucide-react';
+import { MapPin, Info, Navigation, Train } from 'lucide-react';
 
 export default function Location() {
     return (
-        <section className="section bg-bg-secondary/50">
-            <div className="container">
-                <div className="text-center mb-16">
+        <section className="section-padding bg-bg-secondary relative overflow-hidden">
+            <div className="container relative z-10">
+                <div className="text-center max-w-4xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="text-accent-neon text-xs font-bold tracking-widest uppercase mb-4"
+                    >
+                        Campus Location
+                    </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold text-white mb-6"
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-bold text-white leading-tight"
                     >
-                        수도권 어디서나 편리한 접근, <br />
-                        최상의 교육 인프라를 경험하세요
+                        최상의 몰입을 위한 <br />
+                        <span className="text-gradient-neon">프리미엄 교육 인프라</span>
                     </motion.h2>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Map Image Placeholder */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="relative bg-white/5 rounded-3xl overflow-hidden border border-white/10 aspect-video lg:aspect-square flex items-center justify-center"
-                    >
-                        <div className="text-white/10 text-xl font-bold italic">[영통 흥덕유타워 교육장 위치]</div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <div className="relative">
-                                <MapPin className="text-neon fill-neon/20" size={48} />
-                                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-black border border-neon/40 px-3 py-1 rounded-full text-[10px] text-white whitespace-nowrap font-bold">
-                                    마인드캔버스 홀
+                <div className="grid lg:grid-cols-12 gap-12 items-center">
+                    {/* Left: Map/Visual (7 columns) */}
+                    <div className="lg:col-span-7" style={{ gridColumn: 'span 7' }}>
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="relative aspect-video glass overflow-hidden group"
+                        >
+                            <div className="absolute inset-0 bg-white/5 flex items-center justify-center italic text-text-muted text-lg font-heading"
+                                style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}>
+                                [영통 흥덕유타워 용인지점 지도 상세]
+                            </div>
+
+                            {/* Decorative Map Marker */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                                <motion.div
+                                    animate={{ y: [0, -15, 0] }}
+                                    transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                                    className="relative flex flex-col items-center"
+                                >
+                                    <div className="w-16 h-16 rounded-full flex items-center justify-center border backdrop-blur-md"
+                                        style={{ backgroundColor: 'rgba(212, 255, 0, 0.2)', borderColor: 'rgba(212, 255, 0, 0.3)' }}>
+                                        <MapPin className="text-accent-neon" size={32} />
+                                    </div>
+                                    <div className="mt-3 px-4 py-2 glass rounded-full"
+                                        style={{ borderColor: 'rgba(212, 255, 0, 0.4)', boxShadow: '0 0 20px rgba(212, 255, 0, 0.3)' }}>
+                                        <span className="text-xs font-bold text-white whitespace-nowrap">마인드캔버스 용인센터 17F</span>
+                                    </div>
+                                </motion.div>
+                            </div>
+
+                            {/* Overlay Controls UI */}
+                            <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                                <div className="glass p-4 pr-10 flex items-center gap-4"
+                                    style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-accent-neon">
+                                        <Navigation size={20} />
+                                    </div>
+                                    <div>
+                                        <div className="text-[10px] text-text-muted font-bold uppercase tracking-widest">Address</div>
+                                        <div className="text-sm text-white font-medium">용인시 기흥구 흥덕중앙로 120</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </div>
 
-                    <div className="space-y-8">
-                        <div className="bg-bg-primary p-8 rounded-3xl border border-white/10">
-                            <h3 className="text-2xl font-bold text-white mb-6">
-                                용인 흥덕유타워 17층 <br />
-                                <span className="text-neon">마인드캔버스 전용 교육장</span>
-                            </h3>
-                            <ul className="space-y-6">
-                                <li className="flex gap-4">
-                                    <div className="p-2 bg-neon/10 rounded-lg h-fit text-neon"><Info size={20} /></div>
-                                    <div>
-                                        <div className="text-white font-bold">우수한 교통 접근성</div>
-                                        <div className="text-sm text-white/40">수원 IC, 흥덕 IC 인근 핵심 위치.</div>
+                    {/* Right: Info (5 columns) */}
+                    <div className="lg:col-span-5 space-y-8" style={{ gridColumn: 'span 5' }}>
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="space-y-8"
+                        >
+                            <div className="glass p-8 space-y-6 group transition-all duration-500 hover:bg-white/[0.05]">
+                                <div className="flex gap-6">
+                                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border transition-colors group-hover:border-accent-neon/30"
+                                        style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+                                        <Train className="text-accent-neon" size={24} />
                                     </div>
-                                </li>
-                                <li className="flex gap-4">
-                                    <div className="p-2 bg-neon/10 rounded-lg h-fit text-neon"><Info size={20} /></div>
-                                    <div>
-                                        <div className="text-white font-bold">수도권 주요 도시 인접</div>
-                                        <div className="text-sm text-white/40">수원, 용인, 분당, 안양 등 인근 도시에서의 이동이 매우 편리합니다.</div>
+                                    <div className="space-y-3">
+                                        <h3 className="text-xl font-bold text-white font-heading tracking-tight">우수한 교통 접근성</h3>
+                                        <p className="text-text-secondary text-base leading-relaxed">
+                                            수원 IC 및 흥덕 IC 초인접. 수도권 광역 버스 및 인근 역 연계로 서울과 경기 남부 어디서나 편리한 이동이 가능합니다.
+                                        </p>
                                     </div>
-                                </li>
-                                <li className="flex gap-4">
-                                    <div className="p-2 bg-neon/10 rounded-lg h-fit text-neon"><Info size={20} /></div>
-                                    <div>
-                                        <div className="text-white font-bold">프리미엄 학습 공간</div>
-                                        <div className="text-sm text-white/40">최신 장비와 쾌적한 시설로 학습 몰입도를 극대화합니다.</div>
+                                </div>
+                            </div>
+
+                            <div className="glass p-8 space-y-6 group transition-all duration-500 hover:bg-white/[0.05]">
+                                <div className="flex gap-6">
+                                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 border transition-colors group-hover:border-accent-blue/30"
+                                        style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+                                        <Info className="text-accent-blue" size={24} />
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
+                                    <div className="space-y-3">
+                                        <h3 className="text-xl font-bold text-white font-heading tracking-tight">시그니처 교육장</h3>
+                                        <p className="text-text-secondary text-base leading-relaxed">
+                                            최상층 펜트하우스형 교육장에서 내려다보는 파노라마 뷰와 최신 AI 실습 장비로 학습 몰입도를 극대화합니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

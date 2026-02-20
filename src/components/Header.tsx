@@ -8,81 +8,102 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: '프로그램 개요', href: '#program' },
-    { name: '전체 커리큘럼', href: '#curriculum' },
-    { name: '성과 및 혜택', href: '#outcomes' },
-    { name: '문의처', href: '#faq' },
+    { name: '개요', href: '#program' },
+    { name: '커리큘럼', href: '#curriculum' },
+    { name: '기술스택', href: '#tech-stack' },
+    { name: '일정/장소', href: '#schedule' },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md border-b border-white/10 py-4' : 'bg-transparent py-6'
-        }`}
+      className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
+      style={{
+        paddingTop: isScrolled ? '1rem' : '2rem',
+        paddingBottom: isScrolled ? '1rem' : '2rem',
+        backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.4)' : 'transparent',
+        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
+        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none'
+      }}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo Area */}
-        <div className="flex items-center gap-2">
-          <div className="text-xl font-bold tracking-tight text-white">
-            INTEL <span className="text-neon">AI APP</span> CREATOR
+        {/* Logo */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex items-center gap-2 group cursor-pointer"
+        >
+          <div className="text-xl md:text-2xl font-black tracking-tighter text-white font-heading">
+            INTEL <span className="text-accent-neon transition-all group-hover:shadow-neon">AI APP</span> CREATOR
           </div>
-        </div>
+        </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-white/70 hover:text-white transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <button className="bg-neon text-black px-6 py-2 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
-            지금 바로 지원하기
-          </button>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
-          >
-            <div className="container py-8 flex flex-col gap-6">
-              {navLinks.map((link) => (
+        <div className="hidden lg:flex items-center gap-10">
+          <ul className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.name}>
                 <a
-                  key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-white/80"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-sm font-bold text-text-muted hover:text-white transition-colors tracking-widest uppercase font-heading"
                 >
                   {link.name}
                 </a>
+              </li>
+            ))}
+          </ul>
+          <div className="h-6 w-px" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+          <button className="btn-premium btn-primary px-6 py-2.5 text-xs">
+            지금 지원하기
+          </button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button
+          className="lg:hidden w-10 h-10 flex items-center justify-center glass rounded-xl text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden absolute top-full left-0 right-0 glass"
+            style={{
+              borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+              backgroundColor: 'rgba(0, 0, 0, 0.9)',
+              backdropFilter: 'blur(30px)',
+              padding: '2rem'
+            }}
+          >
+            <ul className="flex flex-col gap-6 mb-8">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-2xl font-bold text-white block"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                </li>
               ))}
-              <button className="w-full bg-neon text-black py-3 rounded-xl font-bold">
-                지금 바로 지원하기
-              </button>
-            </div>
+            </ul>
+            <button className="btn-premium btn-primary w-full py-4 text-lg">
+              지금 바로 지원하기
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
