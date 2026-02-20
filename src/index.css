@@ -82,13 +82,29 @@ h6 {
 
 /* Layout Core */
 .container {
-  max-width: 1240px;
+  max-width: 1600px;
+  /* Slightly wider max-width to accommodate larger gutters */
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 5%;
+  /* Minimum 5% gutter on mobile/tablet */
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 8%;
+    /* 8% gutter on desktop */
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 12%;
+    /* Aggressive 12% gutter for premium wide screens like the image */
+  }
 }
 
 .container-narrow {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
