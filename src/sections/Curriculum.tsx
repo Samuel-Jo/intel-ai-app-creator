@@ -3,109 +3,77 @@ import { Target, Cpu, Activity, Award } from 'lucide-react';
 
 const phases = [
     {
-        phase: 'Phase 01',
+        phase: 'Phase 1',
         title: 'Foundation',
-        description: '파이썬 핵심 문법 및 데이터 분석 라이브러리(Pandas, Numpy)를 통한 데이터 처리 기초 확립',
-        icon: <Target className="text-accent-neon" size={32} />,
-        time: 'Month 1'
+        description: 'Python 프로그래밍 & 데이터 분석 기초',
+        icon: <Target className="text-blue-400" size={24} />,
+        isActive: false
     },
     {
-        phase: 'Phase 02',
+        phase: 'Phase 2',
         title: 'Core Tech',
-        description: '머신러닝/딥러닝 핵심 알고리즘 이해 및 Intel OpenVINO를 활용한 추론 최적화 실습',
-        icon: <Cpu className="text-accent-neon" size={32} />,
-        time: 'Month 2-3'
+        description: '머신러닝/딥러닝 핵심 알고리즘, Intel MCP 콘텐츠 학습',
+        icon: <Cpu className="text-blue-400" size={24} />,
+        isActive: false
     },
     {
-        phase: 'Phase 03',
-        title: 'AI Dev',
-        description: 'LLM 및 멀티모달 AI 연동, API 기반 마이크로서비스 아키텍처 구축 및 프롬프트 엔지니어링',
-        icon: <Activity className="text-accent-neon" size={32} />,
-        time: 'Month 4-5'
+        phase: 'Phase 3',
+        title: 'Application',
+        description: 'LLM 및 생성형 AI 모델링, AI API 연동 및 서비스 기획',
+        icon: <Activity className="text-blue-400" size={24} />,
+        isActive: true
     },
     {
-        phase: 'Phase 04',
+        phase: 'Phase 4',
         title: 'Capstone',
-        description: '기업 연계 실전 프로젝트 수행 및 결과물 상용화 배포, 최종 취업 포트폴리오 완성',
-        icon: <Award className="text-accent-neon" size={32} />,
-        time: 'Month 6'
+        description: '실전 프로젝트 수행 및 최종 포트폴리오 완성',
+        icon: <Award className="text-blue-400" size={24} />,
+        isActive: false
     }
 ];
 
 export default function Curriculum() {
     return (
-        <section id="curriculum" className="section-padding bg-bg-secondary relative">
+        <section id="curriculum" className="section-padding bg-[#0f172a] relative">
             <div className="container relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-24">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="text-accent-neon text-xs font-bold tracking-widest uppercase mb-4"
-                    >
-                        Success Roadmap
-                    </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-bold text-white leading-tight"
+                        className="text-4xl md:text-5xl font-bold text-white mb-6"
                     >
-                        기초부터 상용 프로젝트까지 <br />
-                        <span className="text-gradient-neon">단계별 완성 커리큘럼</span>
+                        6개월의 마스터플랜
                     </motion.h2>
+                    <p className="text-gray-400 text-lg font-medium">기초부터 상용화 레벨 프로젝트까지, 체계적인 여정을 안내합니다.</p>
                 </div>
 
-                <div className="relative">
-                    {/* Horizontal Connector Line for Desktop */}
-                    <div className="hidden lg:block absolute z-0"
-                        style={{
-                            top: '100px',
-                            left: '10%',
-                            right: '10%',
-                            height: '1px',
-                            background: 'linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent)'
-                        }} />
-
-                    <div className="grid lg:grid-cols-4 gap-8 lg:gap-6 relative z-10">
-                        {phases.map((phase, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.15 }}
-                                className="group"
-                            >
-                                <div className="flex flex-col items-center">
-                                    {/* Timeline Node */}
-                                    <div className="w-20 h-20 rounded-3xl glass flex items-center justify-center mb-8 relative transition-all duration-500"
-                                        style={{
-                                            borderColor: 'rgba(255,255,255,0.1)',
-                                        }}>
-                                        {phase.icon}
-                                        <div className="absolute px-2 py-0.5 rounded-md bg-accent-neon text-black text-[10px] font-bold tracking-tighter"
-                                            style={{ top: '-12px', right: '-12px' }}>
-                                            {phase.time}
-                                        </div>
-                                    </div>
-
-                                    {/* Card Content */}
-                                    <div className="glass p-8 text-center min-h-[280px] flex flex-col items-center transition-all duration-500 hover:bg-white/[0.05]"
-                                        style={{ backgroundColor: 'rgba(255,255,255,0.03)' }}>
-                                        <div className="text-accent-neon font-bold text-xs tracking-widest uppercase mb-4 font-heading">{phase.phase}</div>
-                                        <h3 className="text-2xl font-bold text-white mb-6 font-heading">{phase.title}</h3>
-                                        <div className="h-px bg-accent-neon"
-                                            style={{ width: '3rem', marginBottom: '1.5rem', opacity: 0.3, transition: 'width 0.5s' }} />
-                                        <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-                                            {phase.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className="grid md:grid-cols-4 gap-6">
+                    {phases.map((phase, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className={`p-8 rounded-[32px] border transition-all duration-500 flex flex-col justify-between gap-10 min-h-[320px] ${phase.isActive
+                                ? 'bg-[#1e293b] border-blue-500/50 shadow-2xl shadow-blue-500/20'
+                                : 'bg-white/5 border-white/5 hover:bg-white/10'
+                                }`}
+                        >
+                            <div className="space-y-6">
+                                <div className="text-blue-400 font-bold text-sm tracking-tight">{phase.phase}</div>
+                                <h3 className="text-2xl font-bold text-white">{phase.title}</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed font-medium">
+                                    {phase.description}
+                                </p>
+                            </div>
+                            <div className="flex justify-end">
+                                {phase.isActive && <Activity className="text-blue-500 opacity-50" size={24} />}
+                                {!phase.isActive && <div className="w-6 h-6" />}
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
