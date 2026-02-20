@@ -28,36 +28,39 @@ export default function Header() {
         borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none'
       }}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between relative">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex items-center gap-2 group cursor-pointer"
+          className="flex items-center gap-2 group cursor-pointer z-10"
         >
           <div className="text-xl md:text-2xl font-black tracking-tighter text-white font-heading">
-            INTEL <span className="text-accent-neon transition-all group-hover:shadow-neon">AI APP</span> CREATOR
+            INTEL <span className="text-accent-yellow transition-all group-hover:shadow-neon">AI APP</span> CREATOR
           </div>
         </motion.div>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          <button className="btn-premium btn-primary px-8 py-3 text-sm">
-            지금 지원하기
-          </button>
-          <div className="h-6 w-px" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+        {/* Desktop Nav - Centered */}
+        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center">
           <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-lg md:text-xl font-bold text-text-muted hover:text-white transition-colors tracking-tight font-heading"
+                  className="text-sm font-bold text-text-muted hover:text-white transition-colors tracking-widest uppercase font-heading"
                 >
                   {link.name}
                 </a>
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Desktop CTA - Right */}
+        <div className="hidden lg:flex items-center z-10">
+          <button className="btn-premium btn-primary px-8 py-3 text-sm" style={{ background: '#3b82f6' }}>
+            지원하기
+          </button>
         </div>
 
         {/* Mobile Toggle */}
