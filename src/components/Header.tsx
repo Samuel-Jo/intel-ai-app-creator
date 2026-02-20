@@ -40,8 +40,8 @@ export default function Header() {
           </div>
         </motion.div>
 
-        {/* Desktop Nav - Centered */}
-        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center">
+        {/* Desktop Nav & CTA - Right side group */}
+        <div className="hidden lg:flex items-center gap-10 z-10">
           <ul className="flex items-center gap-10">
             {navLinks.map((link) => (
               <li key={link.name}>
@@ -54,10 +54,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Desktop CTA - Right */}
-        <div className="hidden lg:flex items-center z-10">
           <button className="btn-premium btn-primary px-8 py-3 text-sm" style={{ background: '#3b82f6' }}>
             지원하기
           </button>
