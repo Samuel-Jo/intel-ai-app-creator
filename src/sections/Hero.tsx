@@ -87,7 +87,7 @@ export default function Hero() {
                                 { label: '지원 혜택', val: '100% 국비' },
                                 { label: '기점', val: '누적 8기' },
                                 { label: '커리큘럼', val: '실무 중심' }
-                            ].map((stat, i) => (
+                            ].map((stat) => (
                                 <div key={stat.label} className="shrink-0">
                                     <div className="text-xs text-text-muted font-bold uppercase tracking-widest mb-1">{stat.label}</div>
                                     <div className="text-xl font-bold text-white">{stat.val}</div>
