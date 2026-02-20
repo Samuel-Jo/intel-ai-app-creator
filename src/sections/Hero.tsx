@@ -28,26 +28,27 @@ export default function Hero() {
                 <div className="grid lg:grid-cols-12 gap-20 items-center">
 
                     {/* Left: Clear Typography Focus */}
-                    <div className="lg:col-span-12 xl:col-span-7 flex flex-col items-center xl:items-start text-center xl:text-left space-y-12">
+                    <div className="lg:col-span-12 xl:col-span-8 flex flex-col items-center xl:items-start text-center xl:text-left space-y-12">
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="inline-flex items-center gap-3 px-5 py-2 rounded-full glass border-white/5"
+                            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass border-white/5 whitespace-nowrap"
                         >
                             <Sparkles size={16} className="text-accent-neon" />
-                            <span className="text-xs font-bold tracking-[0.2em] text-white/60 uppercase">
+                            <span className="text-xs font-bold tracking-[0.2em] text-white/70 uppercase">
                                 Intel x RAPA x KDT Official Program
                             </span>
                         </motion.div>
 
-                        <div className="space-y-8">
+                        <div className="space-y-10 w-full">
                             <motion.h1
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-6xl md:text-8xl xl:text-9xl font-black text-white leading-[0.9] tracking-tighter"
+                                className="text-6xl md:text-7xl xl:text-8xl font-black text-white leading-[1.1] tracking-tighter"
+                                style={{ wordBreak: 'keep-all' }}
                             >
-                                미래를 만드는 <br />
+                                미래를 만드는 <br className="hidden md:block" />
                                 <span className="text-gradient-neon">AI 크리에이터</span>
                             </motion.h1>
 
@@ -55,7 +56,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-xl md:text-2xl text-text-secondary max-w-2xl leading-relaxed mx-auto xl:mx-0"
+                                className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed mx-auto xl:mx-0"
                             >
                                 글로벌 리더 인텔의 핵심 기술 스택으로 완성하는 <br className="hidden md:block" />
                                 실무 중심 AI 개발자 양성 과정. 교육비 전액 국비 지원.

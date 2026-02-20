@@ -23,12 +23,8 @@ export default function Header() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled ? 'glass py-4 shadow-lg' : 'py-6 bg-transparent'}`}
       style={{
-        paddingTop: isScrolled ? '1rem' : '2rem',
-        paddingBottom: isScrolled ? '1rem' : '2rem',
-        backgroundColor: isScrolled ? 'rgba(0, 0, 0, 0.4)' : 'transparent',
-        backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : 'none'
       }}
     >

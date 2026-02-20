@@ -58,7 +58,19 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  word-break: keep-all;
+  /* Prevent character-level wrapping for Korean */
 }
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 body {
   background-color: var(--bg-primary);
@@ -290,18 +302,22 @@ h6 {
   cursor: pointer;
   border: none;
   font-family: var(--font-heading);
+  white-space: nowrap;
 }
 
 .btn-primary {
-  background: var(--accent-neon);
-  color: #000;
-  box-shadow: 0 10px 30px rgba(212, 255, 0, 0.2);
+  background: #3b82f6;
+  /* More stable blue from reference */
+  color: #fff;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(212, 255, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.23);
+  background: #2563eb;
 }
+
 
 /* Typography Helpers - Standard Sizes */
 .text-xs {
